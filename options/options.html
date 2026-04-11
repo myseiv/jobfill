@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JobFill Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <nav class="sidebar">
+    <a href="#profile">Profile</a>
+    <a href="#api">API Settings</a>
+    <a href="#tracker">Applications</a>
+    <a href="#register">Sponsor Register</a>
+  </nav>
+  <main>
+    <!-- Profile -->
+    <section id="profile">
+      <h2>Profile</h2>
+      <fieldset>
+        <legend>Personal</legend>
+        <label>Full Name <input type="text" data-field="personal.name"></label>
+        <label>Email <input type="email" data-field="personal.email"></label>
+        <label>Phone <input type="tel" data-field="personal.phone"></label>
+        <label>Location <input type="text" data-field="personal.location"></label>
+        <label>LinkedIn URL <input type="url" data-field="personal.linkedin"></label>
+        <label>GitHub URL <input type="url" data-field="personal.github"></label>
+        <label>Portfolio URL <input type="url" data-field="personal.portfolio"></label>
+      </fieldset>
+      <fieldset>
+        <legend>Skills (comma-separated)</legend>
+        <textarea data-field="skills" rows="2"></textarea>
+      </fieldset>
+      <fieldset>
+        <legend>Blurbs</legend>
+        <label>Short summary <textarea data-field="blurbs.summary_short" rows="3"></textarea></label>
+        <label>Long summary <textarea data-field="blurbs.summary_long" rows="5"></textarea></label>
+        <label>Why engineering <textarea data-field="blurbs.why_engineering" rows="3"></textarea></label>
+      </fieldset>
+      <fieldset id="experience-section">
+        <legend>Experience <button type="button" id="add-exp">+ Add</button></legend>
+        <div id="experience-list"></div>
+      </fieldset>
+      <fieldset id="education-section">
+        <legend>Education <button type="button" id="add-edu">+ Add</button></legend>
+        <div id="education-list"></div>
+      </fieldset>
+      <button type="button" id="save-profile">Save Profile</button>
+      <span id="profile-saved" class="saved-msg" hidden>Saved.</span>
+    </section>
+
+    <!-- API Settings -->
+    <section id="api">
+      <h2>API Settings</h2>
+      <label>Groq API Key <input type="password" id="api-key" autocomplete="off"></label>
+      <label>Model
+        <select id="api-model">
+          <option value="llama-3.1-8b-instant">llama-3.1-8b-instant (fast)</option>
+          <option value="llama-3.3-70b-versatile">llama-3.3-70b-versatile (better quality)</option>
+        </select>
+      </label>
+      <label>Autofill mode
+        <select id="autofill-mode">
+          <option value="manual">Manual (click Fill button)</option>
+          <option value="auto">Auto (fill on page load)</option>
+        </select>
+      </label>
+      <button type="button" id="save-api">Save API Settings</button>
+      <span id="api-saved" class="saved-msg" hidden>Saved.</span>
+    </section>
+
+    <!-- Application Tracker (populated in Task 13) -->
+    <section id="tracker">
+      <h2>Applications</h2>
+      <div id="tracker-content"><p>Loading...</p></div>
+    </section>
+
+    <!-- Sponsor Register (populated in Task 14) -->
+    <section id="register">
+      <h2>Sponsor Register</h2>
+      <div id="register-content"><p>Loading...</p></div>
+    </section>
+  </main>
+  <script src="options.js" type="module"></script>
+</body>
+</html>

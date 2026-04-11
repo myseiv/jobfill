@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "JobFill",
+  "version": "0.1.0",
+  "description": "AI-powered job application autofill with UK sponsorship checker",
+  "permissions": ["storage", "alarms", "tabs", "activeTab"],
+  "host_permissions": [
+    "https://www.gov.uk/*",
+    "https://assets.publishing.service.gov.uk/*",
+    "https://www.linkedin.com/*",
+    "https://uk.indeed.com/*",
+    "https://www.indeed.com/*",
+    "https://boards.greenhouse.io/*",
+    "https://job-boards.greenhouse.io/*",
+    "https://jobs.lever.co/*",
+    "https://api.groq.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "JobFill"
+  },
+  "options_page": "options/options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.linkedin.com/jobs/*",
+        "https://uk.indeed.com/*",
+        "https://www.indeed.com/*"
+      ],
+      "js": ["content/listing.js"],
+      "type": "module",
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://boards.greenhouse.io/*",
+        "https://job-boards.greenhouse.io/*",
+        "https://jobs.lever.co/*"
+      ],
+      "js": ["content/application.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

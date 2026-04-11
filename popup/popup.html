@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JobFill</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- Fill section — shown only on ATS pages -->
+  <section id="fill-section" hidden>
+    <button id="fill-btn">Fill this form</button>
+    <p id="fill-status" class="status-text"></p>
+  </section>
+
+  <!-- Sponsor lookup -->
+  <section id="lookup-section">
+    <label for="lookup-input">Check sponsor status</label>
+    <input type="text" id="lookup-input" placeholder="Company name…" autocomplete="off">
+    <p id="lookup-result" class="status-text"></p>
+  </section>
+
+  <!-- Recent applications -->
+  <section id="recent-section">
+    <h3>Recent Applications</h3>
+    <ul id="recent-list"></ul>
+  </section>
+
+  <footer>
+    <a id="settings-link" href="#" target="_blank">Settings</a>
+  </footer>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>
