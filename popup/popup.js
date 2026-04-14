@@ -2,15 +2,18 @@
 import { getLogs } from '../shared/storage.js';
 
 const ATS_PATTERNS = [/boards\.greenhouse\.io/, /jobs\.lever\.co/];
+const WORKDAY_PATTERNS = [/myworkdayjobs\.com/, /workday\.com/];
 
 async function init() {
   // Set settings link
   document.getElementById('settings-link').href = chrome.runtime.getURL('options/options.html');
 
-  // Check if current tab is an ATS page
+  // Check if current tab is an ATS or Workday page
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   const isAts = tab?.url && ATS_PATTERNS.some(p => p.test(tab.url));
+  const isWorkday = tab?.url && WORKDAY_PATTERNS.some(p => p.test(tab.url));
   document.getElementById('fill-section').hidden = !isAts;
+  document.getElementById('workday-section').hidden = !isWorkday;
 
   // Load recent applications
   renderRecent();

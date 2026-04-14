@@ -17,6 +17,7 @@ li:last-child { border-bottom: none; }
 .badge-interviewing { background: #fef9c3; color: #854d0e; }
 .badge-rejected { background: #fee2e2; color: #991b1b; }
 .badge-offer { background: #dcfce7; color: #166534; }
+.workday-notice { font-size: 12px; color: #888; font-style: italic; }
 footer { padding-top: 8px; text-align: right; }
 footer a { font-size: 12px; color: #888; text-decoration: none; }
 footer a:hover { color: #111; }

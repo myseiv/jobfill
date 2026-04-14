@@ -78,6 +78,7 @@ The register updates automatically every 7 days. To force a refresh:
 |---|---|
 | Sponsor badges | LinkedIn Jobs, Indeed (uk.indeed.com, indeed.com) |
 | Autofill | Greenhouse (boards.greenhouse.io, job-boards.greenhouse.io), Lever (jobs.lever.co) |
+| Coming soon | Workday (myworkdayjobs.com) |
 
 ## Privacy
 
